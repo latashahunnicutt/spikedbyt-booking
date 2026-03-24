@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SpikedbyT Booking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial;
+      background: #ffe4ec;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 400px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: hotpink;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h2>SpikedbyT 💖</h2>
+
+    <input placeholder="Full Name" id="name"/>
+    <input placeholder="Phone Number" id="phone"/>
+
+    <select id="service">
+      <option value="">Select Service</option>
+      <option>Classic Set - $50</option>
+      <option>Hybrid Set - $60</option>
+      <option>Volume Set - $60</option>
+    </select>
+
+    <input type="date" id="date"/>
+    <input type="time" id="time"/>
+
+    <label>
+      <input type="checkbox" id="agree"/>
+      $15 non-refundable deposit required
+    </label>
+
+    <button onclick="book()">Pay $15 Deposit</button>
+  </div>
+
+  <script>
+    function book() {
+      let name = document.getElementById("name").value;
+      let phone = document.getElementById("phone").value;
+      let service = document.getElementById("service").value;
+      let date = document.getElementById("date").value;
+      let time = document.getElementById("time").value;
+      let agree = document.getElementById("agree").checked;
+
+      if (!name || !phone || !service || !date || !time || !agree) {
+        alert("Please fill everything out");
+        return;
+      }
+
+      alert("Booking saved! Send your $15 deposit.");
+
+      window.location.href = "https://cash.app/$SpikedByT/15";
+    }
+  </script>
+</body>
+</html>
